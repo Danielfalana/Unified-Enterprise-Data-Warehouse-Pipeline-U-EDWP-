@@ -233,7 +233,8 @@ A dedicated metrics table captures:
 - ETL auditing  
 
 ### **Languages & Tools**
-- SQL  
+- SQL
+- Scala (Spark-based transformations & utilities)
 - ADF Expressions  
 - JSON  
 - GitHub  
