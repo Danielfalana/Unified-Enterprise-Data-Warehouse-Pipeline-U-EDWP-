@@ -120,6 +120,9 @@ A master orchestration pipeline controls the entire ETL lifecycle:
 - Switch activities to route data to the correct flow  
 - Modular pipelines for staging, dimensions, and facts  
 
+  <p align="center">
+  <img src="Project Shots/Pipeline Oches.png" width="90%">   
+</p>
 ---
 
 ## **3. Incremental Load Framework (Implemented)**
@@ -161,6 +164,9 @@ A dedicated data flow removes duplicates using:
 - Row ranking  
 - Filtering to retain the latest valid record  
 
+  <p align="center">
+  <img src="Project Shots/Dedup.png" width="60%">   
+</p>
 ---
 
 ## **6. SCD Type 1 & Type 2**
@@ -178,6 +184,10 @@ ADF Data Flows implement:
 - Current flag logic  
 - Insert/update routing  
 
+
+  <p align="center">
+  <img src="Project Shots/SCDs.png" width="60%">   
+</p>
 ---
 
 ## **7. Pipeline Execution Framework**
@@ -214,6 +224,9 @@ A dedicated metrics table captures:
 - Load timestamps  
 - Pipeline/environment identifiers  
 
+ <p align="center">
+  <img src="Project Shots/Metrics.png" width="60%">   
+</p>
 ---
 
 # 🛠️ **Technologies Used**
