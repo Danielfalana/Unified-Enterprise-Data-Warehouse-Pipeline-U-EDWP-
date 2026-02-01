@@ -106,7 +106,7 @@ With conformed dimensions:
 - **DimDate**, **DimTime**, **Employee**, **Store**, **Product**, **Customer**
 
   <p align="center">
-  <img src="Data Physical Model structure/Data Model.png" width="50%">   
+  <img src="Project Shots/Data Model.png" width="50%">   
 </p>
 
 ---
