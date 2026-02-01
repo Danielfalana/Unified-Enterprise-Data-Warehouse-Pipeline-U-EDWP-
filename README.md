@@ -137,23 +137,53 @@ A fully functional **watermark‑based incremental ingestion** mechanism ensures
 
 ---
 
-## **4. Data Quality Rules Engine (Implemented)**
-A centralized rules engine validates data before it enters the EDW.
+## 📦 4. Data Warehouse Mapping
 
-### **Validation Rules**
-- Null checks  
-- Referential integrity checks  
-- Threshold checks  
-- Duplicate detection  
-- Business rule validations  
+This Mapping Data Flow transforms raw operational **Missed Contact** events into a clean, conformed, and warehouse‑ready dataset. The flow applies deduplication, dimension lookups, business rules, and aggregations to produce a fact‑table‑ready output.
 
-### **How It Works**
-- Rules stored in metadata tables  
-- ADF pipelines read rules dynamically  
-- Data Flows apply rules at runtime  
-- Failed rows routed to quarantine tables  
-- Metrics logged for each rule execution  
+---
 
+### 🔄 Data Flow Overview
+
+The mapping follows a classic warehouse engineering pattern:
+
+1. **Ingest raw source data**
+2. **Clean and deduplicate**
+3. **Enrich with dimension lookups**
+4. **Apply business rules**
+5. **Derive additional attributes**
+6. **Aggregate to the correct fact grain**
+7. **Output to the EDW**
+
+---
+
+Dimension Lookups**
+Several lookups enrich the dataset with surrogate keys and descriptive attributes:
+
+| Lookup | Purpose |
+|--------|---------|
+| **EmployeeLookup** | Maps EmployeeID → EmployeeDimKey and attributes |
+| **StoreOvertimeLookup** | Maps StoreID → StoreDimKey and store‑level rules |
+| **MissedContactDateLookup** | Converts raw date → DateDimKey |
+| **MissedContactLookup** | Maps contact type → ContactDimKey |
+| **DecisionLookup** | Maps decision codes → DecisionDimKey |
+
+This step converts raw operational identifiers into **conformed dimensional keys**.
+
+
+### 🧠 Why This Matters
+
+This mapping demonstrates:
+- Strong dimensional modeling skills  
+- Mastery of Azure Data Factory Mapping Data Flows  
+- Ability to design scalable, metadata‑driven pipelines  
+- End‑to‑end BI engineering capability across ingestion, transformation, and warehousing  
+
+It showcases the full lifecycle of transforming raw operational data into analytics‑ready warehouse assets. 
+
+ <p align="center">
+  <img src="Project Shots/Data warehouse mapping.png" width="60%">   
+</p>
 ---
 
 ## **5. Deduplication Framework**
@@ -201,6 +231,9 @@ Execution follows a structured sequence:
 6. Run data quality checks  
 7. Record ETL metrics  
 
+  <p align="center">
+  <img src="Project Shots/Pipeline Execution.png" width="60%">   
+</p>
 ---
 
 ## **8. Error Handling & Retry Logic (Implemented)**
